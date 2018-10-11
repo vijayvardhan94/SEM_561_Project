@@ -11,6 +11,9 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get index" do
+    get pages_index_url
+    assert_response :success
+  end
   
-
 end
