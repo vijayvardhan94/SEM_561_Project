@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails SEM_561_Project: production" uuid="76dfd7b8-a62b-4ad7-9125-cac1f7e88ea5">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/health_network_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails SEM_561_Project: development" uuid="10426b21-344f-4399-b669-3fd5b51a5de1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/health_network_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails SEM_561_Project: test" uuid="e805797b-76c0-448e-992e-01862a60e64a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/health_network_test</jdbc-url>
+    </data-source>
+  </component>
+</project>
