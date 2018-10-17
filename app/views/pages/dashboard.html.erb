@@ -1,7 +1,7 @@
 <div class="well" id="profile">
 </div>
 
-<div class="well" id="profile">
+<div class="well" id="journal">
 </div>
 
 <script>
@@ -25,7 +25,7 @@
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
         success: function( response ) {
-            $('#profile').html(JSON.stringify(response));
+            $('#journal').html(JSON.stringify(response));
         }
     });
 </script>
