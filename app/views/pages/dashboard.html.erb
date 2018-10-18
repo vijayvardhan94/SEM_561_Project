@@ -1,10 +1,11 @@
-<div class="well" id="profile">
+<div class="well" id="profile" style="display: none;">
     <img id="logo" />
     <div id="fullName"></div>
     <div id="badges"></div>
 </div>
 
-<div class="well" id="journal">
+<div class="well" id="journal" style="display: none;">
+    <div id="steps"></div>
 </div>
 
 <script>
@@ -14,10 +15,10 @@
     jQuery.ajax( {
         url: 'https://api.fitbit.com/1/user/-/profile.json',
         type: 'GET',
-        beforeSend : function( xhr ) {
+        beforeSend : function(xhr) {
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
-        success: function( response ) {
+        success: function(response) {
             $('#logo').attr("src", response.user.avatar);
             $('#fullName').text(response.user.fullName);
 
@@ -33,13 +34,20 @@
         }
     });
     jQuery.ajax( {
-        url: 'https://api.fitbit.com/1/user/-/activities/date/2018-10-10.json',
+        url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1m.json',
         type: 'GET',
-        beforeSend : function( xhr ) {
+        beforeSend : function(xhr) {
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
-        success: function( response ) {
-            $('#journal').html(JSON.stringify(response));
+        success: function(response) {
+            var steps = "";
+            $.each(response["activities-steps"], function(index, step) {
+                if (step.value > 0) {
+                    steps += "<div>" + step.dateTime + "</div>";
+                    steps += "<div>" + step.value + "</div>";
+                }
+            });
+            $('#steps').html(steps);
         }
     });
 </script>
