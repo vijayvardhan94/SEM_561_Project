@@ -16,6 +16,11 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
+  test "should get dashboard" do
+    get '/pages/dashboard'
+    assert_response :success
+  end
+  
   test "index should have signup fields" do
     get '/'
     assert_response :success
@@ -32,5 +37,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href^='https://www.fitbit.com']", 1
     assert_select "a[href='/pages/about']", 1
   end
-  #https://www.fitbit.com
 end
