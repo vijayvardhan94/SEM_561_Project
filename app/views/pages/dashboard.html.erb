@@ -1,4 +1,7 @@
 <div class="well" id="profile">
+    <img id="logo" />
+    <div id="fullName"></div>
+    <div id="badges"></div>
 </div>
 
 <div class="well" id="journal">
@@ -15,11 +18,22 @@
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
         success: function( response ) {
-            $('#profile').html(JSON.stringify(response));
+            $('#logo').attr("src", response.user.avatar);
+            $('#fullName').text(response.user.fullName);
+
+            var badges = "";
+            $.each(response.user.topBadges, function(index, badge) {
+                badges += "<img src='" + badge.image100px + "' />";
+                badges += "<div>" + badge.description + "</div>";
+                badges += "<div>" + badge.shareText + "</div>";
+            });
+            $('#badges').html(badges);
+
+            //$('#profile').html(JSON.stringify(response.user.avatar));
         }
     });
     jQuery.ajax( {
-        url: 'https://api.fitbit.com/1/user/-/profile.json',
+        url: 'https://api.fitbit.com/1/user/-/activities/date/2018-10-10.json',
         type: 'GET',
         beforeSend : function( xhr ) {
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
