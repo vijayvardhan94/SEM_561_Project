@@ -41,6 +41,9 @@ gem 'guard', '~> 2.14'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 
+#Using Figaro to handle environment variables/configuration
+gem 'figaro'
+
 gem 'minitest', group: :test
 gem 'minitest-reporters', group: :test
 

@@ -12,5 +12,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @hide_side_nav = true
   end
 end

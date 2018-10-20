@@ -34,7 +34,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "index should have login and about links" do
     get '/'
     assert_response :success
-    assert_select "a[href^='https://www.fitbit.com']", 1
+    assert_select "a[href=<%=ENV[FITBIT_URL]%>]", 1
     assert_select "a[href='/pages/about']", 1
   end
 end
