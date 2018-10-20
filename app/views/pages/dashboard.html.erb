@@ -1,45 +1,47 @@
-<div class="well" id="profile" style="display: none;">
-    <img id="logo" />
-    <div id="fullName"></div>
-    <div id="badges"></div>
-</div>
-
-<div class="well" id="journal" style="display: none;">
-    <div id="steps"></div>
-</div>
-
+<html>
 <script>
-    if (!access_token)
-        window.location.href = "/";
+     // Read the FitBit parameters.
+    // Read the FitBit parameters.
+    var hash = window.location.hash.substring(1);
+    var params = {};
+    hash.split('&').map(hk => { 
+          let temp = hk.split('='); 
+          params[temp[0]] = temp[1];
+      });
+      // Save the FitBit access token.
+    var access_token = params.access_token;
 
+    window.alert(access_token);
     jQuery.ajax( {
         url: 'https://api.fitbit.com/1/user/-/profile.json',
         type: 'GET',
-        beforeSend : function(xhr) {
+        beforeSend : function( xhr ) {
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
-        success: function(response) {
+        success: function( response ) {
             $('#logo').attr("src", response.user.avatar);
-            $('#fullName').text(response.user.fullName);
-
+            $('#fullName').text(response.user.fullName);            
             var badges = "";
             $.each(response.user.topBadges, function(index, badge) {
                 badges += "<img src='" + badge.image100px + "' />";
                 badges += "<div>" + badge.description + "</div>";
                 badges += "<div>" + badge.shareText + "</div>";
             });
-            $('#badges').html(badges);
-
-            //$('#profile').html(JSON.stringify(response.user.avatar));
+            $('#badges').html(badges);            
+            $('#profile_details').text(JSON.stringify(response));
+        },
+        error: function( jqXHR , textStatus , errorThrown ) {
+            console.log(text);
+            console.log(errorThrown);
         }
     });
     jQuery.ajax( {
         url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1m.json',
         type: 'GET',
-        beforeSend : function(xhr) {
+        beforeSend : function( xhr ) {
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
-        success: function(response) {
+        success: function( response ) {            
             var steps = "";
             $.each(response["activities-steps"], function(index, step) {
                 if (step.value > 0) {
@@ -51,3 +53,12 @@
         }
     });
 </script>
+
+<div class="person" id="profile">
+    <img id="logo"/>
+    <div id="fullName"></div>
+    <div id="badges"></div>    
+    <div id="steps"></div>    
+    <div id="profile_details"></div>    
+</div>
+</html>
