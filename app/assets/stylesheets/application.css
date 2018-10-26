@@ -81,3 +81,15 @@ footer {
    right:0px;
    margin: 0 auto;
 }
+
+.registration{
+   position: relative;
+   right:0px;
+   top: 60px;  
+}
+
+.wearable{
+    position: relative;
+    right:0px;
+    top: 90px;  
+}
