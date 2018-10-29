@@ -26,6 +26,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'guard', '~> 2.14'
 
+gem 'd3-rails', '~> 3.5', '>= 3.5.16'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
