@@ -1,17 +1,4 @@
-<html>
 <script>
-     // Read the FitBit parameters.
-    // Read the FitBit parameters.
-    var hash = window.location.hash.substring(1);
-    var params = {};
-    hash.split('&').map(hk => { 
-          let temp = hk.split('='); 
-          params[temp[0]] = temp[1];
-      });
-      // Save the FitBit access token.
-    var access_token = params.access_token;
-
-    
     jQuery.ajax( {
         url: 'https://api.fitbit.com/1/user/-/profile.json',
         type: 'GET',
@@ -19,13 +6,13 @@
             xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
         },
         success: function( response ) {
-            $('#logo').attr("src", response.user.avatar);
-            $('#fullName').text(response.user.fullName);            
+            $('#logo').attr("src", response.user.avatar640);
+            $('#fullName').text(response.user.fullName);
+            $('#userInfo').text("Gender: " + response.user.gender
+                 + " Age: " + response.user.age);
             var badges = "";
             $.each(response.user.topBadges, function(index, badge) {
-                badges += "<img src='" + badge.image100px + "' />";
-                badges += "<div>" + badge.description + "</div>";
-                badges += "<div>" + badge.shareText + "</div>";
+                badges += "<img class='badge-logo' src='" + badge.image100px + "' title='" + badge.description + "' />";
             });
             $('#badges').html(badges);            
             $('#profile_details').text(JSON.stringify(response));
@@ -54,11 +41,22 @@
     });
 </script>
 
-<div class="person" id="profile">
-    <img id="logo"/>
-    <div id="fullName"></div>
-    <div id="badges"></div>    
+<div class="row">
+    <div class="col col-xs-3">
+        <div class="well">
+            <img id="logo" class="img-responsive"/>
+        </div>
+    </div>
+    <div class="col col-xs-9">
+        <div class="well">
+            <h2 id="fullName"></h2>
+            <div id="userInfo"></div>
+            <div id="badges"></div>
+        </div>
+    </div>
+</div>
+
+<div class="well" id="profile">
     <div id="steps"></div>    
     <div id="profile_details"></div>    
 </div>
-</html>

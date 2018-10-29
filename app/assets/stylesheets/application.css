@@ -53,17 +53,8 @@ footer {
    text-align:center;
 }
 
-.person {    
-   position: absolute;
-   border-left: 3px solid black;
-   border-top: 3px solid black;
-   border-bottom: 3px solid black;
-   border-right: 3px solid black;
-   right:0px;
-   top:0px;
-   height: 400px;
-   width:  900px;
-   margin: 0 auto;
+.badge-logo {
+    width: 50px;
 }
 
 .details {    
@@ -76,21 +67,3 @@ footer {
    margin: 0 auto;
 }
 
-
-.container {    
-   position: absolute;
-   right:0px;
-   margin: 0 auto;
-}
-
-.registration{
-   position: relative;
-   right:0px;
-   top: 60px;  
-}
-
-.wearable{
-    position: relative;
-    right:0px;
-    top: 90px;  
-}
