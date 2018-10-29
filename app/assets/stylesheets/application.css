@@ -50,6 +50,7 @@ footer {
    background-color: #CC0000;
    border-top: 3px solid black;
    padding: 10px;
+   text-align:center;
 }
 
 .badge-logo {
@@ -64,4 +65,16 @@ footer {
    right:0px;
    top:0px;    
    margin: 0 auto;
+}
+
+.registration{
+   position: relative;
+   right:0px;
+   top: 60px;  
+}
+
+.wearable{
+    position: relative;
+    right:0px;
+    top: 90px;  
 }
