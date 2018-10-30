@@ -8,8 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script>
-      
-  </script>
+      // Read the FitBit parameters.
+      var hash = window.location.hash.substring(1);
+      var params = {};
+      hash.split('&').map(hk => { 
+            let temp = hk.split('='); 
+            params[temp[0]] = temp[1];
+        });
+        // Save the FitBit access token.
+      var access_token = params.access_token;      
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
