@@ -24,9 +24,21 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "only_access_authenticate_user" do    
       get "/pages/dashboard"
       assert_response :redirect
-    end
+  end
     
-  
+  test " access profile page" do
+    #get "/pages/profile"
+    #assert_equal 302,status
+    #assert_equal "/unauthenticated", path
+    post "/users/sign_in", params: {user: { email: users(:prateek).email,password: 'prateek1234'} }
+    follow_redirect!
+    assert_equal 200, status
+    assert_equal "/users", path    
+    assert_equal 'Signed in successfully.', flash[:notice]
+    get "/pages/profile"
+    assert_equal 200,status
+
+  end
   
   
   test "index should have login and about links" do
