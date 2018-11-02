@@ -89,3 +89,10 @@ footer {
     color: black;
 
 }
+
+
+.userprofile{
+    position: relative;
+    right:0px;
+    top: 90px;
+}
