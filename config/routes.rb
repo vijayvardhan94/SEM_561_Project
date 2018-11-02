@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get '/users' => 'pages#login', as: :user_root # creates user_root_path
+  #post '/login' => 'pages#login' as:  :user_root
 
 namespace :user do
   root 'pages#login' # creates user_root_path
