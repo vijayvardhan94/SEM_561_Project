@@ -67,3 +67,24 @@ footer {
    margin: 0 auto;
 }
 
+
+.registration{
+   position: relative;
+   right:0px;
+   top: 60px;  
+}
+
+.wearable{
+    position: relative;
+    right:0px;
+    top: 90px;  
+}
+
+
+.panel > .panel-heading {
+    background: transparent;
+    background-image: none;
+    background-color: none;
+    color: black;
+
+}
