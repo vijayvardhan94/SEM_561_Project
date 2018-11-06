@@ -2,7 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1aa793c-5262-41b7-9ddf-d138eea91132" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.fitbit.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.fitbit.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/calories.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/distance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/fitbit-icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/fitbit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/steps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/application.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/d3-3.2.8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/dashing.gridster.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/dashing/widgets/fitbit.coffee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/dashing/widgets/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/gridster/jquery.gridster.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/gridster/jquery.leanModal.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/jquery.knob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/rickshaw-1.4.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/dashing/widgets/fitbit.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/dashing/widgets/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/jobs/fitbit.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/jobs/sample.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/dashing/dashboards/sample.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/dashing/widgets/fitbit.haml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/layouts/dashing/dashboard.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/initializers/dashing.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/history.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fitbit.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SEM_561_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEM_561_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -27,14 +65,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="erb" value="1" />
+          <entry key="erb" value="2" />
           <entry key="rb" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="RHTML" value="1" />
+          <entry key="RHTML" value="2" />
           <entry key="Ruby" value="1" />
         </counts>
       </usages-collector>
@@ -56,16 +94,25 @@
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="71">
+              <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -90,6 +137,7 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/pages/about.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -147,6 +195,13 @@
               <item name="SEM_561_Project" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEM_561_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEM_561_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEM_561_Project" type="b2602c69:ProjectViewProjectNode" />
@@ -279,12 +334,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541921528536</updated>
-      <workItem from="1541921531361" duration="1488000" />
+      <workItem from="1541921531361" duration="1599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1488000" />
+    <option name="totallyTimeSpent" value="1599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -322,7 +377,7 @@
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -336,7 +391,14 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
         </state>
       </provider>
     </entry>

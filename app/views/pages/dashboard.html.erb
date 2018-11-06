@@ -41,7 +41,7 @@
     });
 </script>
 
-<div class="row">
+<div class="row" style="display: none;">
     <div class="col col-xs-3">
         <div class="well">
             <img id="logo" class="img-responsive"/>
@@ -56,7 +56,38 @@
     </div>
 </div>
 
-<div class="well" id="profile">
+<div class="well" id="profile" style="display: none;">
     <div id="steps"></div>    
     <div id="profile_details"></div>    
+</div>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="fitbit" data-view="Fitbit" data-viewtype="0"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="fitbit" data-view="Fitbit" data-viewtype="1"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="welcome" data-view="Text" data-title="Hello"
+        data-text="This is your Fitbit dashboard. Here you will see a summary of your Fitbit exercise data."
+        data-moreinfo="You can drag the widgets around!"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="fitbit" data-view="Fitbit" data-viewtype="2"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="fitbit" data-view="Fitbit" data-viewtype="3"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="fitbit" data-view="Fitbit" data-viewtype="4"></div>
+    </li>
+
+  </ul>
 </div>
