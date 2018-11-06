@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Dashing::Engine, at: Dashing.config.engine_path
   devise_for :users
   get '/users' => 'pages#login', as: :user_root # creates user_root_path
 
