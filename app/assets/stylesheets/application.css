@@ -78,3 +78,20 @@ footer {
     right:0px;
     top: 90px;  
 }
+
+
+
+.panel > .panel-heading {
+    background: transparent;
+    background-image: none;
+    background-color: none;
+    color: black;
+
+}
+
+
+.userprofile{
+    position: relative;
+    right:0px;
+    top: 90px;
+}

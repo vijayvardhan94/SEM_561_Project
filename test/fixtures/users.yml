@@ -7,9 +7,13 @@
 
 # column: value
 #
-one:
-  email: prateek@example.com
-two:  
-  email: xyz@example.com
+prateek:
+  email: prateek@example.com  
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'prateek1234')  %>
+  
+
+fitbit:  
+  email: xyz@example.com  
+  encrypted_password: <%= User.new.send(:password_digest, 'fitbit123') %>  
 #two: {}
 # column: value
