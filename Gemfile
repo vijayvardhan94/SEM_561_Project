@@ -26,11 +26,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'guard', '~> 2.14'
 
-gem "fitgem"
 gem 'dashing-rails'
 gem "fitgem_oauth2"
 gem 'haml-rails'
-#gem "haml"
 gem 'activesupport'
 
 # Use Redis adapter to run Action Cable in production
