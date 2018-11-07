@@ -2,45 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1aa793c-5262-41b7-9ddf-d138eea91132" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.fitbit.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.fitbit.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/calories.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/distance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/fitbit-icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/fitbit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/dashing/widgets/fitbit/steps.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/application.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/d3-3.2.8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/dashing.gridster.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/dashing/widgets/fitbit.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/dashing/widgets/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/gridster/jquery.gridster.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/gridster/jquery.leanModal.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/jquery.knob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/rickshaw-1.4.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/dashing/widgets/fitbit.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/dashing/widgets/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/jobs/fitbit.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/jobs/sample.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/dashing/dashboards/sample.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/dashing/widgets/fitbit.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/dashing/dashboard.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/dashing.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/history.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/fitbit.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SEM_561_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEM_561_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.fitbit.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.fitbit.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jobs/sample.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/jobs/sample.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashing/widgets/fitbit.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashing/widgets/fitbit.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/dashing.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/dashing.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/pages_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/pages_controller_test.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -103,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
             </state>
           </provider>
         </entry>
@@ -111,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="20">
+              <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -334,12 +305,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541921528536</updated>
-      <workItem from="1541921531361" duration="1599000" />
+      <workItem from="1541921531361" duration="1633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1599000" />
+    <option name="totallyTimeSpent" value="1633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -391,14 +362,14 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="20">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
         </state>
       </provider>
     </entry>

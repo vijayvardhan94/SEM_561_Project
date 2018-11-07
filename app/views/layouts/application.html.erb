@@ -43,11 +43,13 @@
                 <% if user_signed_in? %>               
                 
                   <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href='#'>My Account<span class="caret"></span></a>
-                   <ul class="dropdown-menu">
-                      <li><%= link_to current_user.email, "edit_user_registration_path" %></li>
-                      <li><%= link_to "Change Password","edit_user_registration_path" %></li>
-                      <li><%= link_to "Add Workout Log",'/pages/login/#' %></li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-id="loggedIn" role="button" href='#' aria-haspopup="true" aria-expanded="false">
+                      My Account<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" id="loggedIn">
+                      <li><%= link_to current_user.email,'/pages/profile' %></li>
+                      <li><%= link_to "Change Password",edit_user_registration_path %></li>                      
+                      <li><%= link_to "Add Workout Log",'/pages/login' %></li>
                       <li><%= link_to "Dashboard", '#' %></li>
                       <li><%= link_to "Groups", '#' %></li>
                       <li> <%=link_to "Logout", "destroy_user_session_path",method: :delete %></li>

@@ -1,17 +1,17 @@
 # Use this hook to configure Dashing bahaviors.
 Dashing.configure do |config|
   # Scheduler instance.
-  # config.scheduler = ::Rufus::Scheduler.new
+  config.scheduler = ::Rufus::Scheduler.new
 
   # Redis credentials.
   # See https://devcenter.heroku.com/articles/redistogo to configure redis for heroku.
-  # config.redis_host     = '127.0.0.1'
-  # config.redis_port     = '6379'
-  # config.redis_password = nil
-  # config.redis_timeout  = 3
+  config.redis_host     = '127.0.0.1'
+  config.redis_port     = '6379'
+  config.redis_password = nil
+  config.redis_timeout  = 3
 
   # Redis namespace when pushing new data.
-  # config.redis_namespace = 'dashing_events'
+  config.redis_namespace = 'dashing_events'
 
   # Dashing come with default widgets using css and coffeescript.
   # You can create your own widgets by adding the following files:
@@ -46,7 +46,7 @@ Dashing.configure do |config|
   # The Dashing layout used to display metrics.
   # config.dashboard_layout_path = 'dashing/dashboard'
   config.dashboard_layout_path = 'application'
-  
+
   # Default dashboard name to load when going to /dashing/dashboards
   # config.default_dashboard = nil
 
