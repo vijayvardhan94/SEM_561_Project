@@ -77,7 +77,24 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "div[data-id='fitbit'][data-viewtype='3']", 1
     assert_select "div[data-id='fitbit'][data-viewtype='4']", 1
     assert_select "div[data-id='welcome']", 1
- 
-    end
+  end
+
+  test "user change password" do
+    # get the login page
+    get "/pages/login"
+    assert_equal 302, status
+    # post the login and follow through to the home page
+    post "/users/sign_in", params: {user: { email: users(:prateek).email,password: 'prateek1234'} }
+    follow_redirect!
+    assert_equal 200, status
+    assert_equal "/pages/login", path    
+    assert_equal 'Signed in successfully.', flash[:notice]
+    get "/users/edit"
+    assert_response :success
+    assert_select "input[id='user_email'][type='email']", 1
+    assert_select "input[id='user_password'][type='password']", 1
+    assert_select "input[id='user_password_confirmation'][type='password']", 1
+    assert_select "input[id='user_current_password'][type='password']", 1
+  end
 
 end
