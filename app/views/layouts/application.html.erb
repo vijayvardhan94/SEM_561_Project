@@ -5,11 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'dashing/application' %>
     <%= stylesheet_link_tag 'dashing/application' %>
-
+    <%= javascript_include_tag 'dashing/application' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="icon" href="/favicon.ico">
@@ -22,7 +20,7 @@
             params[temp[0]] = temp[1];
         });
         // Save the FitBit access token.
-      var access_token = params.access_token;      
+      var access_token = params.access_token;
     </script>
   </head>
   <body>
@@ -40,8 +38,8 @@
           <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">              
                 <li><a href="/pages/about">About</a></li>
-                <% if user_signed_in? %>               
-                
+                <% if user_signed_in? %>
+
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-id="loggedIn" role="button" href='#' aria-haspopup="true" aria-expanded="false">
                       My Account<span class="caret"></span>
@@ -50,7 +48,7 @@
                       <li><%= link_to current_user.email,'/pages/profile' %></li>
                       <li><%= link_to "Change Password",edit_user_registration_path %></li>                      
                       <li><%= link_to "Add Workout Log",'/pages/login' %></li>
-                      <li><%= link_to "Dashboard", '#' %></li>
+                      <li><%= link_to "Dashboard", '/pages/dashboard' %></li>
                       <li><%= link_to "Groups", '#' %></li>
                       <li> <%=link_to "Logout", "destroy_user_session_path",method: :delete %></li>
                     </ul>
@@ -68,11 +66,12 @@
     <div class="container">                              
               <% if notice %><div class="alert alert-info"><%= notice %></div><%end%>
               <% if alert %><div class="alert alert-warning"><%= alert %></div><%end%>              
-              <%= yield %>                            
+              <%= yield %>
+              <div>&nbsp;</div>
+              <div>&nbsp;</div>
     </div>
     <footer class="footer navbar-fixed-bottom">        
         <li>Contact - SoftwareEngineeringProject@oregonstate.edu</a></li>
     </footer>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
   </body>
 </html>
