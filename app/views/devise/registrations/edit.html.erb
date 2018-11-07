@@ -6,16 +6,16 @@
         <div class="col col-lg-6 col-md-5 col-sm-4 col-xs-3">
             &nbsp;
         </div>
-        <div class="col col-lg-4 col-md-5 col-sm-6 col-xs-7">
+        <div class="col col-lg-5 col-md-6 col-sm-7 col-xs-8">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h2>Edit <%= resource_name.to_s.humanize %> Password</h2>
+                    <h3>Edit <%= resource_name.to_s.humanize %> Password</h3>
                     &nbsp;
                     &nbsp;                
   
                   <div class="form-group">
                     <%= f.label :email %><br />
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
                   </div>
 
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,7 +24,7 @@
 
                   <div class="form-group">
                     <%= f.label :password %> <i>(Enter New Password)</i><br />
-                    <%= f.password_field :password, autocomplete: "new-password" %>
+                    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
                     <% if @minimum_password_length %>
                     <br />
                     <em><%= @minimum_password_length %> characters minimum</em>
@@ -33,12 +33,12 @@
 
                   <div class="form-group">
                     <%= f.label :password_confirmation %><i>(Confirm New Password)</i><br />
-                    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
                   </div>
 
                   <div class="form-group">
                     <%= f.label :current_password %> <i>(Enter Current password)</i><br />
-                    <%= f.password_field :current_password, autocomplete: "current-password" %>
+                    <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
                   </div>
 
                   <div class="actions">
