@@ -1,0 +1,2 @@
+class TbUserDatum < ApplicationRecord
+end

@@ -10,10 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_02_205525) do
+ActiveRecord::Schema.define(version: 2018_11_07_181313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tb_heart_rates", force: :cascade do |t|
+    t.integer "index", null: false
+    t.string "emailid", default: "", null: false
+    t.datetime "date"
+    t.integer "dailyHeartRate"
+    t.integer "hourlyHeartRate"
+    t.datetime "timestamp", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["index"], name: "index_tb_heart_rates_on_index", unique: true
+  end
+
+  create_table "tb_user_data", force: :cascade do |t|
+    t.integer "index", null: false
+    t.string "emailid", default: "", null: false
+    t.string "fullName"
+    t.integer "age"
+    t.string "avatar"
+    t.string "avatar150"
+    t.string "avatar640"
+    t.string "country"
+    t.string "gender"
+    t.float "height"
+    t.float "weight"
+    t.string "weightUnit"
+    t.integer "steps"
+    t.integer "lightlyActiveMinutes"
+    t.integer "fairlyActiveMinutes"
+    t.integer "veryActiveMinutes"
+    t.integer "activityCalories"
+    t.datetime "sleepStartTime"
+    t.datetime "sleepEndTime"
+    t.integer "minutesAsleep"
+    t.integer "minutesAwake"
+    t.datetime "timestamp", null: false
+    t.boolean "flag_manual"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["index"], name: "index_tb_user_data_on_index", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
