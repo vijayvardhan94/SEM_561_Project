@@ -6,5 +6,9 @@ class UsersController < PagesController
             @current_user_last_update_time = current_user.updated_at
             @current_user_fitbit_configured = current_user.fitbitconfigured      
         end        
-    end    
+    end 
+    
+    def sign_out
+        
+    end
 end
