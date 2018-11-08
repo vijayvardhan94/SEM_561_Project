@@ -1,0 +1,2 @@
+class TbHeartRate < ApplicationRecord
+end
