@@ -45,18 +45,18 @@
                       My Account<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" id="loggedIn">
-                      <li><%= link_to current_user.email,'/pages/profile' %></li>
+                      <li><%= link_to current_user.email,'/users' %></li>
                       <li><%= link_to "Change Password",edit_user_registration_path %></li>                      
                       <li><%= link_to "Add Workout Log",'/pages/login' %></li>
                       <li><%= link_to "Dashboard", '/pages/dashboard' %></li>
                       <li><%= link_to "Groups", '#' %></li>
-                      <li> <%=link_to "Logout", "destroy_user_session_path",method: :delete %></li>
+                      <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
                     </ul>
                   </li>            
                 
                 <%else%>
-                <li><%=link_to "SignUp", "new_user_registration_path" %></li>
-                <li><%=link_to "SignIn", "new_user_session_path" %></li>
+                <li><%=link_to "SignUp", new_user_registration_path %></li>
+                <li><%=link_to "SignIn", new_user_session_path%></li>
                 <%end%>
             </ul>
           </div>
