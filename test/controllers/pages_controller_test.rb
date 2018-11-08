@@ -35,7 +35,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
     assert_equal "/users", path    
     assert_equal 'Signed in successfully.', flash[:notice]
-    get "/pages/profile"
+    get "/users"
     assert_equal 200,status
 
   end
@@ -95,6 +95,20 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "input[id='user_password'][type='password']", 1
     assert_select "input[id='user_password_confirmation'][type='password']", 1
     assert_select "input[id='user_current_password'][type='password']", 1
+  end
+
+  test "user sign out" do
+    get "/pages/login"
+    assert_equal 302, status
+    # post the login and follow through to the home page
+    post "/users/sign_in", params: {user: { email: users(:prateek).email,password: 'prateek1234'} }
+    follow_redirect!
+    assert_equal 200, status
+    assert_equal "/pages/login", path    
+    assert_equal 'Signed in successfully.', flash[:notice]
+    delete "/users/sign_out"
+    assert_response :redirect
+    assert_equal '/users/sign_out' ,path
   end
 
 end
