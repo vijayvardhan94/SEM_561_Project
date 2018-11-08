@@ -1,0 +1,2 @@
+class WorkoutlogController < ApplicationController
+end
