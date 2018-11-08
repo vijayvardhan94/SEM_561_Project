@@ -1,0 +1,100 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ */
+
+ body {
+    margin-top: 53px !important;
+    background: url(/assets/background-a754e9d18bdeef4841a79549e404d3643318ad3aca19da55b804ece5cf8ddd94.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: black !important;
+    font-size: 14px !important;
+}
+
+h1, h2, h3, h4, h5 {
+    color: black !important;
+}
+
+.page-body {
+   margin-left: 0;
+}
+
+.navbar-fixed-top {
+    background-color: #CC0000;
+    border-bottom: 3px solid black;
+}
+
+.navbar-left {
+   background-color: #CC0000;
+   border-right: 3px solid black;
+   height: 100vh;
+}
+
+.navbar-fixed-top a {
+   color: black !important;
+}
+
+.navbar-fixed-top .navbar-collapse a:hover {
+   background-color: #E37373 !important;
+}
+
+footer {
+   background-color: #CC0000;
+   border-top: 3px solid black;
+   padding: 10px;
+   text-align:center;
+}
+
+.badge-logo {
+    width: 50px;
+}
+
+.details {    
+   position: relative;
+   border-left: 1px solid black;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   right:0px;
+   top:0px;    
+   margin: 0 auto;
+}
+
+.registration{
+   position: relative;
+   right:0px;
+   top: 60px;  
+}
+
+.wearable{
+    position: relative;
+    right:0px;
+    top: 90px;  
+}
+
+
+
+.panel > .panel-heading {
+    background: transparent;
+    background-image: none;
+    background-color: none;
+    color: black;
+
+}
+
+
+.userprofile{
+    position: relative;
+    right:0px;
+    top: 90px;
+}
