@@ -2,6 +2,6 @@ require 'test_helper'
 
 class UserDatumTest < ActiveSupport::TestCase
   # test "the truth" do
-  #   assert true
+  #   assert truep
   # end
 end

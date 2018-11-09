@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id: MyString
+ud1:
+  index: 5
+  emailid: aashwinvats@gmail.com
   content: 
 
-two:
-  id: MyString
-  content: 
+ud2:
+  index: 4
+  emailid: xyz@example.com
+  content:  
