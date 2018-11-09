@@ -6,10 +6,19 @@
             <div class ="panel panel-info"> 
                 <div class="panel-heading">                    
                     <div class="form-group">                        
-                        <h4><%= @current_user_email %></h4>
-                        <p><%= @current_user_last_update_time %></p>                       
                         <%if @current_user_fitbit_configured == true %>
-                            <p>Fitbit Configured</p>
+                            <p> Hi,</p>
+                            <p> <%= @current_user_email %>,</p>
+                            <p> <%= @current_user_last_update_time%>  </p>
+                            <p> <%= @current_user_fitbit_configured%> </p> 
+                            <p> <%= @token %> </p>
+                        <%else%>
+                            <p> Hi,</p>
+                            <p><%= @current_user_email %></p>
+                            <p> <%= @current_user_last_update_time%> </p>
+                            <p> <%= @current_user_fitbit_configured%></p>
+                            <p> <%= @user.fitbitkey %> </p>
+                            <p><a class="btn btn-primary btn-lg btn-block" href=<%=ENV["FITBIT_URL"]%> role="button">CONFIGURE FIT BIT</a> </p>
                         <%end%>
                     </div>
                 </div>

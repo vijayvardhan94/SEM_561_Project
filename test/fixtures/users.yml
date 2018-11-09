@@ -10,6 +10,9 @@
 prateek:
   email: prateek@example.com  
   encrypted_password: <%= Devise::Encryptor.digest(User, 'prateek1234')  %>
+  fitbitconfigured: true
+  fitbitkey:
+
   
 
 fitbit:  
