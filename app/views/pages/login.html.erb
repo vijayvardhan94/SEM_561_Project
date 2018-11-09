@@ -4,8 +4,10 @@
             &nbsp;
         </div>
         <div class="col col-lg-4 col-md-5 col-sm-6 col-xs-7">
-                <a class="btn btn-primary btn-lg btn-block" href=<%=ENV["FITBIT_URL"]%> role="button">CONFIGURE FIT BIT</a>                
-                <a class="btn btn-primary btn-lg btn-block disabled" role="button">ADD WORKOUT LOG </a>
+               <%if @current_user_fitbit_configured == true %>                            
+                    <p>Fitbit Configured Please check Dashboard !!</p>  
+                <%end%>
+            <a class="btn btn-primary btn-lg btn-block disabled" role="button">ADD WORKOUT LOG </a>                    
         </div>
     </div>
 </div>  

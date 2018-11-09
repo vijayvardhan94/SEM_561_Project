@@ -111,4 +111,27 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_equal '/users/sign_out' ,path
   end
 
+  test "check database connectivity" do
+    require './config/environment.rb' # Assuming the script is located in the root of the rails app
+    begin
+      ActiveRecord::Base.establish_connection # Establishes connection
+      ActiveRecord::Base.connection # Calls connection object
+      puts "CONNECTED!" if ActiveRecord::Base.connected? 
+      puts "NOT CONNECTED!" unless ActiveRecord::Base.connected?
+      rescue
+      puts "NOT CONNECTED!"
+    end
+  end
+
+
+  test "check database insert" do
+    user_test = User.find_by(email:users(:prateek).email)
+    assert_equal user_test.fitbitconfigured,true
+    user_test.fitbitkey = '1234'        
+    user_test.save   
+    assert_equal user_test.email,users(:prateek).email
+    user_test_new =  User.find_by(email:users(:prateek).email)
+    assert_equal user_test_new.fitbitkey,'1234'
+  end
+
 end

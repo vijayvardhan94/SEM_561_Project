@@ -16,12 +16,19 @@
       // Read the FitBit parameters.
       var hash = window.location.hash.substring(1);
       var params = {};
-      hash.split('&').map(hk => { 
+      
+      hash.split('#').map(hk => { 
             let temp = hk.split('='); 
             params[temp[0]] = temp[1];
-        });
+          });
+
         // Save the FitBit access token.
       var access_token = params.access_token;
+      if (access_token){
+          window.open("http://localhost:3000/users?code=" + access_token);
+      }
+      
+      
     </script>
   </head>
   <body>
