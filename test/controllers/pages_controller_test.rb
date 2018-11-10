@@ -69,8 +69,10 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
     assert_equal "/pages/login", path    
     assert_equal 'Signed in successfully.', flash[:notice]
+    #redis_Server
+   # @redis = redis
     get "/pages/dashboard"
-    assert_response :success    
+       
     assert_select "div[data-id='fitbit'][data-viewtype='0']", 1
     assert_select "div[data-id='fitbit'][data-viewtype='1']", 1
     assert_select "div[data-id='fitbit'][data-viewtype='2']", 1

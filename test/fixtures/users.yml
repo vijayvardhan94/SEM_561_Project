@@ -11,7 +11,7 @@ prateek:
   email: prateek@example.com  
   encrypted_password: <%= Devise::Encryptor.digest(User, 'prateek1234')  %>
   fitbitconfigured: true
-  fitbitkey:
+  fitbitkey: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMkQ4SjMiLCJzdWIiOiI0VEpSMkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNTQyMzIxOTM5LCJpYXQiOjE1NDE4NzA1MjB9.4jREtaKlEqkWBzSBlHir6EApqx9-aVr5gozuw3ak5JM"
 
   
 
