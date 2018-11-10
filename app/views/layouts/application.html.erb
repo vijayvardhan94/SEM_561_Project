@@ -26,7 +26,8 @@
       var access_token = params.access_token;
       if (access_token){
           window.open("http://localhost:3000/users/profile?code=" + access_token,"_self");
-          window.reload()
+          window.open("http://localhost:3000/users/profile")
+          //window.reload();
           //window.location.search += "?code=" +"access_token"
       }
       
