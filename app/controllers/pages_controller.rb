@@ -26,6 +26,7 @@ class PagesController < ApplicationController
       animate_views = true
       user_token = current_user.fitbitkey
       fitbit = Fitbit.new token: user_token, unit_system: unit_system, date_format: date_format
+      #fitbit = Fitbit.new unit_system: unit_system, date_format: date_format       
       if fitbit.errors?
         Dashing.send_event('fitbit', { error: fitbit.error })
       else

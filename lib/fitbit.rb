@@ -18,11 +18,15 @@ class Fitbit
   end
 
   def device
+    if current_device != nil
     {
-      #version:   [ current_device["deviceVersion"], current_device["type"] ].join(" "),
-      #battery:   current_device["battery"],
-      #last_sync: DateTime.iso8601(current_device["lastSyncTime"]).strftime(options[:date_format])
+      
+        version:   [ current_device["deviceVersion"], current_device["type"] ].join(" "),
+        battery:   current_device["battery"],
+        last_sync: DateTime.iso8601(current_device["lastSyncTime"]).strftime(options[:date_format])
+      
     }
+    end
   end
 
   def steps
