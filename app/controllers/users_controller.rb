@@ -30,7 +30,7 @@ class UsersController < PagesController
         #@user.fitbitconfigured = true
         user.fitbitkey = @token        
         if user.fitbitkey == nil
-            user.fitbitconfigured = true
+            user.fitbitconfigured = false
         else
             user.fitbitconfigured = true
         end
