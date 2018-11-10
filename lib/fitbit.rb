@@ -13,13 +13,15 @@ class Fitbit
     @options = options
     @config  = YAML.load(File.open(".fitbit.yml"))
     @client  = FitgemOauth2::Client.new config[:oauth].merge!(options)
+    puts Dashing.config.engine_path
+    puts Dashing.config.redis_namespace
   end
 
   def device
     {
-      version:   [ current_device["deviceVersion"], current_device["type"] ].join(" "),
-      battery:   current_device["battery"],
-      last_sync: DateTime.iso8601(current_device["lastSyncTime"]).strftime(options[:date_format])
+      #version:   [ current_device["deviceVersion"], current_device["type"] ].join(" "),
+      #battery:   current_device["battery"],
+      #last_sync: DateTime.iso8601(current_device["lastSyncTime"]).strftime(options[:date_format])
     }
   end
 
