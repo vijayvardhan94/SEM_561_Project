@@ -25,7 +25,9 @@
         // Save the FitBit access token.
       var access_token = params.access_token;
       if (access_token){
-          window.open("http://localhost:3000/users?code=" + access_token);
+          window.open("http://localhost:3000/users/profile?code=" + access_token,"_self");
+          window.reload()
+          //window.location.search += "?code=" +"access_token"
       }
       
       
@@ -53,7 +55,7 @@
                       My Account<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" id="loggedIn">
-                      <li><%= link_to current_user.email,'/users' %></li>
+                      <li><%= link_to current_user.email,'/users/profile' %></li>
                       <li><%= link_to "Change Password",edit_user_registration_path %></li>                      
                       <li><%= link_to "Add Workout Log",'/pages/login' %></li>
                       <li><%= link_to "Dashboard", '/pages/dashboard' %></li>

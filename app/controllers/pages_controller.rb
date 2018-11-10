@@ -18,6 +18,27 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+  
+    if user_signed_in? && current_user.fitbitconfigured ==true 
+    
+      unit_system   = "METRIC"
+      date_format   = "%H:%M"
+      animate_views = true
+      user_token = current_user.fitbitkey
+      fitbit = Fitbit.new token: user_token, unit_system: unit_system, date_format: date_format
+      if fitbit.errors?
+        Dashing.send_event('fitbit', { error: fitbit.error })
+      else
+        Dashing.send_event('fitbit', {
+        device:   fitbit.device,
+        steps:    fitbit.steps,
+        calories: fitbit.calories,
+        distance: fitbit.distance,
+        active:   fitbit.active,
+        animate:  animate_views
+       })
+      end
+    end
   end
-   
+ 
 end

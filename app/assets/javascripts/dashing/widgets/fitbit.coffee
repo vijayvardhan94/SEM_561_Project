@@ -6,6 +6,8 @@ class Dashing.Fitbit extends Dashing.Widget
     @determineView()
 
   onData: (data) ->
+    
+    #console.log("whatsupp")
     @currentView(@index).fadeOut() if @index
     clearInterval @interval if @interval
 

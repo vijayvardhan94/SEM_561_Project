@@ -11,6 +11,7 @@ Dashing.configure do |config|
   config.redis_timeout  = 3
 
   # Redis namespace when pushing new data.
+  
   config.redis_namespace = 'dashing_events'
 
   # Dashing come with default widgets using css and coffeescript.
@@ -37,7 +38,7 @@ Dashing.configure do |config|
   # Engine path to use for accessing engine's routes.
   # Ex: http://your_app/dashing/dashboard/my_dashboard_name
   # config.engine_path = '/dashing'
-  #config.engine_path = '/'
+  #config.engine_path = 'http://localhost:3000/pages/dashboard'
 
   # The dashboards views path used to find dashboards.
   # config.dashboards_views_path = Rails.root.join('app', 'views', 'dashing', 'dashboards')
@@ -57,5 +58,15 @@ Dashing.configure do |config|
 
   # List of Devise models that should access the whole dashboard.
   # List the models. E.g: '[:user, :admin]'
-  # config.devise_allowed_models = []
-end
+  config.devise_allowed_models = [:user]
+
+  def send_event(id,data)
+
+    event = data.merge(id: id,updateAt: Time.now.utc.to_i).to_json
+    redis.with do | redis_connection|
+      redis_connection.hset("#{Dashing.config.redis_namespace}.latest",id,event)
+      redis_connection.publish("#{Dashing.config.redis_namespace}.create",event)
+    end  
+  end    
+
+end  
