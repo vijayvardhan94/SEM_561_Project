@@ -6,21 +6,20 @@
             <div class ="panel panel-info"> 
                 <div class="panel-heading">                    
                     <div class="form-group">                        
-                        <%if @current_user_fitbit_configured == true && @current_user_fitbitkey != nil%>
-                            <p> Hi,</p>
-                            <p> <%= @current_user_email %>,</p>
-                            <p> <%= @current_user_last_update_time%>  </p>
-                            <p> <%= @current_user_fitbit_configured%> </p> 
-                            <p> Fitbit Device is Configured                            
-                        <%else%>
+                        <%if @current_user_fitbit_configured == false && @current_user_fitbitkey == nil%>
                             <p> Hi,</p>
                             <p><%= @current_user_email %></p>
                             <p> <%= @current_user_last_update_time%> </p>
-                            <p> <%= @current_user_fitbit_configured%></p>                            
+                            <!--p> <%= @current_user_fitbit_configured%></p-->                            
                             <%if @current_user_fitbitkey == nil%>
-                                <p><a class="btn btn-primary btn-lg btn-block" href=<%=ENV["FITBIT_URL"]%> role="button">CONFIGURE FIT BIT</a> </p>
-                                                            
+                                <p><a class="btn btn-primary btn-lg btn-block" href=<%=ENV["FITBIT_URL"]%> role="button">CONFIGURE FIT BIT</a> </p>                                                            
                             <%end%>
+                        <%else%>
+                            <p> Hi,</p>
+                            <p> <%= @current_user_email %>,</p>
+                            <p> <%= @current_user_last_update_time%>  </p>
+                            <!--p> <%= @current_user_fitbit_configured%> </p--> 
+                            <p> Fitbit Device is Configured                            
                         <%end%>
                     </div>
                 </div>

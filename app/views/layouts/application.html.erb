@@ -58,6 +58,7 @@
                     <ul class="dropdown-menu" id="loggedIn">
                       <li><%= link_to current_user.email,'/users/profile' %></li>
                       <li><%= link_to "Change Password",edit_user_registration_path %></li>                      
+                      <li><%= link_to "Sync FitBit",'/users/sync' %></li>
                       <li><%= link_to "Add Workout Log",'/pages/login' %></li>
                       <li><%= link_to "Dashboard", '/pages/dashboard' %></li>
                       <li><%= link_to "Groups", '#' %></li>

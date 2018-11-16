@@ -136,4 +136,11 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_equal user_test_new.fitbitkey,'1234'
   end
 
+  test "sync webpage" do
+    get "/pages/login"
+    assert_equal 302, status    
+    get "/users/sync"
+    assert_equal 302,status
+  end
+
 end
