@@ -1,6 +1,9 @@
 <script>  
 
-    var access_token = "<%= @user_token%>";
+    //user = User.find_by(email:@current_user_email)
+    var access_token = "<%= current_user.fitbitkey%>";
+    console.log("hi")
+    console.log(access_token)
     var json_profile;
     var json_Activity;
     var json_heartrate; 

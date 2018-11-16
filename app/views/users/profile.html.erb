@@ -6,7 +6,7 @@
             <div class ="panel panel-info"> 
                 <div class="panel-heading">                    
                     <div class="form-group">                        
-                        <%if @current_user_fitbit_configured == false && @current_user_fitbitkey == nil%>
+                        <%if @current_user_fitbit_configured == false || @current_user_fitbitkey == nil%>
                             <p> Hi,</p>
                             <p><%= @current_user_email %></p>
                             <p> <%= @current_user_last_update_time%> </p>

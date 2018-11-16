@@ -36,8 +36,11 @@ class UsersController < PagesController
             user_profile = params[:profile]
             user_activity  = params[:activity]            
             user_heartrate = params[:heartrate]
-
-            if userDatum == nil 
+            puts "hi"
+            puts user_heartrate
+            puts user_profile
+            puts "bye"
+            if userDatum == nil && user_profile != nil && user_activity != nil && user_heartrate != nil
                 fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
                 userDatum = UserDatum.create(index:current_user.id,emailid:current_user.email,content:{
                     device:    fitbit.device,
@@ -54,22 +57,24 @@ class UsersController < PagesController
                 @syncTime = userDatum.updated_at
                 flash[:notice] = "Fitbit successfully synced"
             else
-                fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
-                userDatum.content = {
-                    device:    fitbit.device,
-                    steps:     fitbit.steps,
-                    calories:  fitbit.calories,
-                    distance:  fitbit.distance,
-                    active:    fitbit.active,
-                    animate:   animate_views,
-                    profile:   user_profile,
-                    activity:  user_activity,
-                    heartrate: user_heartrate
-                }
-                userDatum.updated_at = DateTime.now                
-                userDatum.save
-                @syncTime = userDatum.updated_at
-                flash[:notice] = "Fitbit successfully synced"
+                if user_profile != nil && user_activity != nil && user_heartrate != nil
+                    fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
+                    userDatum.content = {
+                        device:    fitbit.device,
+                        steps:     fitbit.steps,
+                        calories:  fitbit.calories,
+                        distance:  fitbit.distance,
+                        active:    fitbit.active,
+                        animate:   animate_views,
+                        profile:   JSON.parse(user_profile),
+                        activity:  JSON.parse(user_activity),
+                        heartrate: JSON.parse(user_heartrate)
+                    }
+                    userDatum.updated_at = DateTime.now                
+                    userDatum.save
+                    @syncTime = userDatum.updated_at
+                    flash[:notice] = "Fitbit successfully synced"
+                end
             end
         else
             @user_invalid_token = true
