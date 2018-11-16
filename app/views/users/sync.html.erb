@@ -1,0 +1,81 @@
+<script>  
+
+    var access_token = "<%= @user_token%>";
+    var json_profile;
+    var json_Activity;
+    var json_heartrate; 
+
+    if (access_token){
+        jQuery.ajax( {
+            url: 'https://api.fitbit.com/1/user/-/profile.json',
+            type: 'GET',
+            beforeSend : function( xhr ) {
+                xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
+            },
+            success: function( response ) {      
+                json_profile = response
+                jQuery.ajax({
+                    url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1m.json',
+                    type: 'GET',
+                    beforeSend : function( xhr ) {
+                        xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
+                    },
+                    success: function( response ) { 
+                        json_Activity = response           
+                    //console.log(JSON.stringify(response))
+                        jQuery.ajax( {
+                            url: 'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json',
+                            type: 'GET',
+                            beforeSend : function( xhr ) {
+                                xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
+                            },
+                            success: function( response ) { 
+                                json_heartrate = response 
+                                jQuery.ajax( {
+                                url: '/users/sync',
+                                type: 'POST',        
+                                    data:{activity:JSON.stringify(json_Activity),profile:JSON.stringify(json_profile),heartrate:JSON.stringify(json_heartrate)},
+                                    dataType:"JSON"        
+                                });                       
+                            },
+                            error: function( jqXHR , textStatus , errorThrown ) {
+                                console.log(text);
+                                console.log(errorThrown);
+                            }
+                        }); 
+                    },
+                    error: function( jqXHR , textStatus , errorThrown ) {
+                        console.log(text);
+                        console.log(errorThrown);
+                    }
+                });
+            },
+            error: function( jqXHR , textStatus , errorThrown ) {
+                console.log(text);
+                console.log(errorThrown);
+            }
+        });
+    }
+</script>
+
+
+<div class="row">
+        <div class="col col-lg-6 col-md-5 col-sm-4 col-xs-3">
+            &nbsp;
+        </div>
+        <div class="col col-lg-4 col-md-5 col-sm-6 col-xs-7">
+            <div class ="panel panel-info"> 
+                <div class="panel-heading">                    
+                    <div class="form-group">                        
+                       <% if @user_invalid_token ==true %>
+                            <p>Fitbit Device is Not Configured</p>
+                            <p>Please Configure Device</p>
+                       <% else %>
+                            <p>Fitbit Device is Successfully Synced:</p>
+                            <p>Last Sync Time<%= @syncTime%></p> 
+                       <%end%> 
+                    </div>
+                </div>
+            </div>    
+        </div>
+</div>
