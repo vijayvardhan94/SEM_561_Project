@@ -60,7 +60,7 @@ class UsersController < PagesController
                     profile:   JSON.parse(user_profile),
                     activity:  JSON.parse(user_activity),
                     heartrate: JSON.parse(user_heartrate),
-                    sleep: JSON.parse(user_sleep)                   
+                    sleep:     JSON.parse(user_sleep)                   
                 },created_at:current_user.created_at,updated_at:DateTime.now)        
                 userDatum.save
                 @syncTime = userDatum.updated_at
@@ -78,7 +78,7 @@ class UsersController < PagesController
                         profile:   JSON.parse(user_profile),
                         activity:  JSON.parse(user_activity),
                         heartrate: JSON.parse(user_heartrate),
-                        sleep: JSON.parse(user_sleep)
+                        sleep:     JSON.parse(user_sleep)
                     }
                     userDatum.updated_at = DateTime.now                
                     userDatum.save
