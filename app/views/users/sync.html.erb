@@ -1,12 +1,14 @@
 <script>  
 
     //user = User.find_by(email:@current_user_email)
-    var access_token = "<%= current_user.fitbitkey%>";
-    console.log("hi")
-    console.log(access_token)
+    var access_token = "<%= current_user.fitbitkey%>";    
     var json_profile;
     var json_Activity;
     var json_heartrate; 
+    var json_sleep;
+    var todayDate = new Date().toISOString().slice(0,10);
+    
+    
 
     if (access_token){
         jQuery.ajax( {
@@ -27,19 +29,34 @@
                         json_Activity = response           
                     //console.log(JSON.stringify(response))
                         jQuery.ajax( {
-                            url: 'https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json',
+                            url: 'https://api.fitbit.com/1/user/-/activities/heart/date/today/1m.json',
                             type: 'GET',
                             beforeSend : function( xhr ) {
                                 xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
                             },
                             success: function( response ) { 
-                                json_heartrate = response 
-                                jQuery.ajax( {
-                                url: '/users/fitbit',
-                                type: 'POST',        
-                                    data:{activity:JSON.stringify(json_Activity),profile:JSON.stringify(json_profile),heartrate:JSON.stringify(json_heartrate)},
-                                    dataType:"JSON"        
-                                });                       
+                                json_heartrate = response
+                                jQuery.ajax({
+                                    url: 'https://api.fitbit.com/1.2/user/-/sleep/date/' + todayDate + '.json',
+                                    type: 'GET',
+                                    beforeSend : function( xhr ) {
+                                        xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
+                                    },
+                                    success: function( response ) { 
+                                        json_sleep = response
+                                        jQuery.ajax( {
+                                            url: '/users/fitbit',
+                                            type: 'POST',        
+                                            data:{activity:JSON.stringify(json_Activity),profile:JSON.stringify(json_profile),heartrate:JSON.stringify(json_heartrate),sleep:JSON.stringify(json_sleep)},
+                                            dataType:"JSON"        
+                                        });
+                                    },
+                                    error: function( jqXHR , textStatus , errorThrown ) {
+                                        console.log(text);
+                                        console.log(errorThrown);
+                                    }
+                                });
+                                                     
                             },
                             error: function( jqXHR , textStatus , errorThrown ) {
                                 console.log(text);

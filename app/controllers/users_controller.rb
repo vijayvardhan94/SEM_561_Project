@@ -46,8 +46,9 @@ class UsersController < PagesController
             user_profile = params[:profile]
             user_activity  = params[:activity]            
             user_heartrate = params[:heartrate]
+            user_sleep     = params[:sleep]
             
-            if userDatum == nil && user_profile != nil && user_activity != nil && user_heartrate != nil
+            if userDatum == nil && user_profile != nil && user_activity != nil && user_heartrate != nil && user_sleep != nil
                 fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
                 userDatum = UserDatum.create(index:current_user.id,emailid:current_user.email,content:{
                     device:    fitbit.device,
@@ -58,7 +59,8 @@ class UsersController < PagesController
                     animate:   animate_views,
                     profile:   JSON.parse(user_profile),
                     activity:  JSON.parse(user_activity),
-                    heartrate: JSON.parse(user_heartrate)                    
+                    heartrate: JSON.parse(user_heartrate),
+                    sleep: JSON.parse(user_sleep)                   
                 },created_at:current_user.created_at,updated_at:DateTime.now)        
                 userDatum.save
                 @syncTime = userDatum.updated_at
@@ -75,7 +77,8 @@ class UsersController < PagesController
                         animate:   animate_views,
                         profile:   JSON.parse(user_profile),
                         activity:  JSON.parse(user_activity),
-                        heartrate: JSON.parse(user_heartrate)
+                        heartrate: JSON.parse(user_heartrate),
+                        sleep: JSON.parse(user_sleep)
                     }
                     userDatum.updated_at = DateTime.now                
                     userDatum.save
