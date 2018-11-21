@@ -35,7 +35,7 @@
                             success: function( response ) { 
                                 json_heartrate = response 
                                 jQuery.ajax( {
-                                url: '/users/sync',
+                                url: '/users/fitbit',
                                 type: 'POST',        
                                     data:{activity:JSON.stringify(json_Activity),profile:JSON.stringify(json_profile),heartrate:JSON.stringify(json_heartrate)},
                                     dataType:"JSON"        
@@ -74,8 +74,8 @@
                             <p>Fitbit Device is Not Configured</p>
                             <p>Please Configure Device</p>
                        <% else %>
-                            <p>Fitbit Device is Successfully Synced:</p>
-                            <p>Last Sync Time<%= @syncTime%></p> 
+                            <p>Fitbit Device is Successfully Synced</p>
+                            <!--p>Last Sync Time<%= @syncTime%></p--> 
                        <%end%> 
                     </div>
                 </div>

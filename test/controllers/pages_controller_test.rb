@@ -139,8 +139,17 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "sync webpage" do
     get "/pages/login"
     assert_equal 302, status    
+    post "/users/sign_in", params: {user: { email: users(:prateek).email,password: 'prateek1234'} }
     get "/users/sync"
-    assert_equal 302,status
+    assert_equal 200,status
   end
+
+  test "sync fitbit process" do
+    post "/users/sign_in", params: {user: { email: users(:prateek).email,password: 'prateek1234'} }
+    get "/users/sync"
+    assert_equal 200,status
+    post "/users/fitbit"
+    assert_equal 'Fitbit not synced blank fitbit details', flash[:notice]      
+  end 
 
 end

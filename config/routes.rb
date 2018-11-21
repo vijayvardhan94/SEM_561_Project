@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get '/users' => 'users#user', as: :user_root # creates user_root_path 
     #delete 'users/sign_out' => 'devise/sessions#destroy'
     get '/users/profile' => 'users#profile'
-    get 'users/sync'     => 'users#sync'
-    post 'users/sync'     
+    get 'users/sync'   => 'users#sync'
+    post 'users/fitbit' => 'users#sync_new'    
     #gepost '/login' => 'pages#login' as:  :user_root
 
     
@@ -14,7 +14,7 @@ namespace :users do
   root 'users#user' # creates user_root_path
   #get 'users#sign_out' => 'devise/sessions#destroy'
   get '/users/profile' => 'users#profile'
-  get 'users/sync'     => 'users#sync'
+  get 'users/sync'   => 'users#sync'  
 end
 
 

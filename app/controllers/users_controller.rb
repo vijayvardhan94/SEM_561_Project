@@ -25,7 +25,17 @@ class UsersController < PagesController
         end
     end
 
-    def sync   
+    
+    def sync
+        if user_signed_in? && current_user.fitbitkey != nil
+            @user_invalid_token = false
+        else
+            @user_invalid_token = true
+        end           
+
+    end
+    
+    def sync_new   
         if user_signed_in? && current_user.fitbitkey != nil
             unit_system   = "METRIC"
             date_format   = "%H:%M"
@@ -36,10 +46,7 @@ class UsersController < PagesController
             user_profile = params[:profile]
             user_activity  = params[:activity]            
             user_heartrate = params[:heartrate]
-            puts "hi"
-            puts user_heartrate
-            puts user_profile
-            puts "bye"
+            
             if userDatum == nil && user_profile != nil && user_activity != nil && user_heartrate != nil
                 fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
                 userDatum = UserDatum.create(index:current_user.id,emailid:current_user.email,content:{
@@ -49,9 +56,9 @@ class UsersController < PagesController
                     distance:  fitbit.distance,
                     active:    fitbit.active,
                     animate:   animate_views,
-                    profile:   user_profile,
-                    activity:  user_activity,
-                    heartrate: user_heartrate                    
+                    profile:   JSON.parse(user_profile),
+                    activity:  JSON.parse(user_activity),
+                    heartrate: JSON.parse(user_heartrate)                    
                 },created_at:current_user.created_at,updated_at:DateTime.now)        
                 userDatum.save
                 @syncTime = userDatum.updated_at
@@ -73,11 +80,12 @@ class UsersController < PagesController
                     userDatum.updated_at = DateTime.now                
                     userDatum.save
                     @syncTime = userDatum.updated_at
-                    flash[:notice] = "Fitbit successfully synced"
+                    flash[:notice] = "Fitbit successfully synced"                
+                else
+                    flash[:notice] = "Fitbit not synced blank fitbit details"
                 end
             end
-        else
-            @user_invalid_token = true
+        else            
             flash[:notice] = "Fitbit is not configured for this account"        
         end
     end
