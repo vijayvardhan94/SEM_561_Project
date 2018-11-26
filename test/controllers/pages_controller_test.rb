@@ -78,6 +78,8 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "div[data-id='fitbit'][data-viewtype='2']", 1
     assert_select "div[data-id='fitbit'][data-viewtype='3']", 1
     assert_select "div[data-id='fitbit'][data-viewtype='4']", 1
+    assert_select "div[data-id='fitbit'][data-viewtype='5']", 1
+    assert_select "div[data-id='fitbit'][data-viewtype='6']", 1
     assert_select "div[data-id='welcome']", 1
   end
 

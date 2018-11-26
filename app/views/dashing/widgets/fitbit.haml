@@ -1,6 +1,4 @@
 %h1(class="title")
-  %span Fitbit
-%hi
   HealthFit
 
 %span(id="data")  
@@ -55,6 +53,11 @@
       .label very active minutes
       .goal(data-bind="active.goal | append '% of goal'")
       .bar(data-bind-data-bar-width="active.goal")
+
+    %li(data-bind-class="profile.user | prepend 'profile '")
+      .logo
+        %img(data-bind-src="profile.user.avatar640")
+      %span(data-bind="profile.user.fullName")
 
 %span(id="error")
   .value Uh Oh.
