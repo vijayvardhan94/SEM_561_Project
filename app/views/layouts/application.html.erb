@@ -26,7 +26,7 @@
       var access_token = params.access_token;
       if (access_token){
           window.open("http://localhost:3000/users/profile?code=" + access_token,"_self");
-          window.open("http://localhost:3000/users/profile")
+          window.open("http://localhost:3000/users/profile","_blank");
           //window.reload();
           //window.location.search += "?code=" +"access_token"
       }
@@ -53,15 +53,14 @@
 
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-id="loggedIn" role="button" href='#' aria-haspopup="true" aria-expanded="false">
-                      My Account<span class="caret"></span>
+                      <%= current_user.email %><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" id="loggedIn">
-                      <li><%= link_to current_user.email,'/users/profile' %></li>
+                      <li><%= link_to "Profile",'/users/profile' %></li>
                       <li><%= link_to "Change Password",edit_user_registration_path %></li>                      
                       <li><%= link_to "Sync FitBit",'/users/sync' %></li>
                       <li><%= link_to "Add Workout Log",'/pages/login' %></li>
-                      <li><%= link_to "Dashboard", '/pages/dashboard' %></li>
-                      <li><%= link_to "Groups", '#' %></li>
+                      <li><%= link_to "Dashboard", '/pages/dashboard' %></li>                      
                       <li> <%=link_to "Logout", destroy_user_session_path, method: :delete %></li>
                     </ul>
                   </li>            

@@ -64,7 +64,9 @@ class UsersController < PagesController
                 },created_at:current_user.created_at,updated_at:DateTime.now)        
                 userDatum.save
                 @syncTime = userDatum.updated_at
-                flash[:notice] = "Fitbit successfully synced"
+                if @syncTime != nil
+                    flash[:notice] = "Fitbit successfully synced"
+                end
             else
                 if user_profile != nil && user_activity != nil && user_heartrate != nil
                     fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
@@ -83,7 +85,9 @@ class UsersController < PagesController
                     userDatum.updated_at = DateTime.now                
                     userDatum.save
                     @syncTime = userDatum.updated_at
-                    flash[:notice] = "Fitbit successfully synced"                
+                    if @syncTime != nil
+                        flash[:notice] = "Fitbit successfully synced"
+                    end                    
                 else
                     flash[:notice] = "Fitbit not synced blank fitbit details"
                 end
