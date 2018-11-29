@@ -6,9 +6,13 @@
     var json_Activity;
     var json_heartrate; 
     var json_sleep;
-    var todayDate = new Date().toISOString().slice(0,10);
-    
-    
+    var current_date_iso = new Date().toISOString().slice(0,10);    
+    var today_date_epoch = new Date();
+    var old_date_epoch   = new Date().setDate(today_date_epoch.getDate()-30);
+    var old_date_iso     = new Date(old_date_epoch).toISOString().slice(0,10);
+    var sleep_url = 'https://api.fitbit.com/1.2/user/-/sleep/date/' + current_date_iso + '/' + old_date_iso +'.json'
+    console.log(sleep_url)
+    console.log(current_date_iso + "hi" + old_date_iso)
 
     if (access_token){
         jQuery.ajax( {
@@ -36,23 +40,24 @@
                             },
                             success: function( response ) { 
                                 json_heartrate = response
-                                jQuery.ajax({
-                                    url: 'https://api.fitbit.com/1.2/user/-/sleep/date/' + todayDate + '.json',
+                                jQuery.ajax({                                    
+                                    url: 'https://api.fitbit.com/1.2/user/-/sleep/date/' + '2018-11-28' + '.json',                                    
                                     type: 'GET',
                                     beforeSend : function( xhr ) {
                                         xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
                                     },
                                     success: function( response ) { 
                                         json_sleep = response
+                                        console.log(json_sleep)
                                         jQuery.ajax( {
                                             url: '/users/fitbit',
                                             type: 'POST',        
-                                            data:{activity:JSON.stringify(json_Activity),profile:JSON.stringify(json_profile),heartrate:JSON.stringify(json_heartrate),sleep:JSON.stringify(json_sleep)},
+                                            data:{activity:JSON.stringify(json_Activity),profile:JSON.stringify(json_profile),heartrate:JSON.stringify(json_heartrate),sleep_activity:JSON.stringify(json_sleep)},
                                             dataType:"JSON"        
                                         });
                                     },
                                     error: function( jqXHR , textStatus , errorThrown ) {
-                                        console.log(text);
+                                        console.log(textStatus);
                                         console.log(errorThrown);
                                     }
                                 });
@@ -87,12 +92,11 @@
             <div class ="panel panel-info"> 
                 <div class="panel-heading">                    
                     <div class="form-group">                        
-                       <% if @user_invalid_token ==true %>
+                       <% if @user_invalid_token ==true%>
                             <p>Fitbit Device is Not Added</p>
                             <p>Please Add Device</p>
                        <% else %>
-                            <p>Fitbit Device is Successfully Synced</p>
-                            <!--p>Last Sync Time<%= @syncTime%></p--> 
+                            <p>Fitbit Device is Successfully Synced</p>                             
                        <%end%> 
                     </div>
                 </div>

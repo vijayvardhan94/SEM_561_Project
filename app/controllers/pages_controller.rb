@@ -22,8 +22,8 @@ class PagesController < ApplicationController
       @current_user_fitbit_configured = current_user.fitbitconfigured            
       userDatum = UserDatum.find_by(emailid:current_user.email)
       if userDatum == nil
-        #Dashing.send_event('fitbit', { error: {"message":"Fitbit is not Synced,please sync using Drop Down Menu"} })
-        flash[:notice] = "Dashboard Data Generation Failed"
+        Dashing.send_event('fitbit', { error: {"message":"Fitbit is not Synced/Added"} })
+        #flash[:notice] = "Dashboard Data Generation Failed"
       else        
         #flash[:notice] = "Dashboard Created Successfully"
         Dashing.send_event('fitbit',userDatum.content)

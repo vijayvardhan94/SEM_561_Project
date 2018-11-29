@@ -60,7 +60,7 @@
       %span(data-bind="profile.user.fullName")
 
 %span(id="error")
-  .value Uh Oh.
+  .value(data-bind = "error.message")
   %p(data-bind="error")
 
 %p(class="updated-at" data-bind="updatedAtMessage")

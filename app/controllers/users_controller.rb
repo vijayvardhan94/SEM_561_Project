@@ -43,13 +43,17 @@ class UsersController < PagesController
             @user_token = current_user.fitbitkey            
             userDatum = UserDatum.find_by(emailid:current_user.email)
             @syncTime = nil            
-            user_profile = params[:profile]
+            user_profile   = params[:profile]
             user_activity  = params[:activity]            
             user_heartrate = params[:heartrate]
-            user_sleep     = params[:sleep]
+            user_sleep     = params[:sleep_activity]
             
             if userDatum == nil && user_profile != nil && user_activity != nil && user_heartrate != nil && user_sleep != nil
                 fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
+                if fitbit == nil
+                    flag = true
+                end
+
                 userDatum = UserDatum.create(index:current_user.id,emailid:current_user.email,content:{
                     device:    fitbit.device,
                     steps:     fitbit.steps,
@@ -60,16 +64,24 @@ class UsersController < PagesController
                     profile:   JSON.parse(user_profile),
                     activity:  JSON.parse(user_activity),
                     heartrate: JSON.parse(user_heartrate),
-                    sleep:     JSON.parse(user_sleep)                   
-                },created_at:current_user.created_at,updated_at:DateTime.now)        
+                    sleep_activity: JSON.parse(user_sleep)
+                },created_at:current_user.created_at,updated_at:DateTime.now) 
+                       
                 userDatum.save
                 @syncTime = userDatum.updated_at
-                if @syncTime != nil
+                if userDatum != nil and flag != true
                     flash[:notice] = "Fitbit successfully synced"
                 end
             else
-                if user_profile != nil && user_activity != nil && user_heartrate != nil
+                if user_profile != nil && user_activity != nil && user_heartrate != nil && user_sleep != nil
+                    #puts("hi")
+                    #puts(sleep)
+                    #puts("bye")
+
                     fitbit = Fitbit.new token: @user_token, unit_system: unit_system, date_format: date_format
+                    if fitbit == nil
+                        flag = true
+                    end
                     userDatum.content = {
                         device:    fitbit.device,
                         steps:     fitbit.steps,
@@ -80,13 +92,16 @@ class UsersController < PagesController
                         profile:   JSON.parse(user_profile),
                         activity:  JSON.parse(user_activity),
                         heartrate: JSON.parse(user_heartrate),
-                        sleep:     JSON.parse(user_sleep)
+                        sleep_activity: JSON.parse(user_sleep)
                     }
+                    ##puts("hi")
+                    #puts(sleep)
+                    #puts("bye")
                     userDatum.updated_at = DateTime.now                
                     userDatum.save
                     @syncTime = userDatum.updated_at
-                    if @syncTime != nil
-                        flash[:notice] = "Fitbit successfully synced"
+                    if userDatum != nil and flag != true
+                        flash[:notice] = "Fitbit successfully synced,please check Dashboard"
                     end                    
                 else
                     flash[:notice] = "Fitbit not synced blank fitbit details"
