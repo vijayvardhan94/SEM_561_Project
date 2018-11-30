@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :workout_loggers
   mount Dashing::Engine, at: Dashing.config.engine_path
   #mount Dashing::Engine, at: '/dashing/dashboard'
   devise_for :users 
@@ -19,9 +20,10 @@ end
 
 
   get  'pages/about'
-  get  'pages/login'
+  get  'pages/login' => 'workout_loggers#index'
   get  'pages/index'
   get  'pages/dashboard'  
   root :to => "pages#index"
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

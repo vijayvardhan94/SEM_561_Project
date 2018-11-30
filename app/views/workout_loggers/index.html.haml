@@ -1,0 +1,33 @@
+%h1 Your Workouts
+
+%table
+  %thead
+    %tr
+      %th Date
+      %th Height
+      %th Weight
+      %th Steps
+      %th Activitycalories
+      %th Sleep start time
+      %th Sleep end time
+      %th
+      %th
+      %th
+
+  %tbody
+    - @workout_loggers.each do |workout_logger|
+      %tr
+        %td= workout_logger.date
+        %td= workout_logger.height
+        %td= workout_logger.weight
+        %td= workout_logger.steps
+        %td= workout_logger.activitycalories
+        %td= workout_logger.sleepstarttime
+        %td= workout_logger.sleependtime
+        %td= link_to 'View', workout_logger
+        %td= link_to 'Edit', edit_workout_logger_path(workout_logger)
+        %td= link_to 'Delete log', workout_logger, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'Add a new log', new_workout_logger_path

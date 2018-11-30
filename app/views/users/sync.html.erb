@@ -21,15 +21,16 @@
                 json_profile = response
                 jQuery.ajax({
                     url: 'https://api.fitbit.com/1/user/-/activities/steps/date/today/1m.json',
+                    
                     type: 'GET',
                     beforeSend : function( xhr ) {
                         xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
                     },
                     success: function( response ) { 
                         json_Activity = response           
-                    //console.log(JSON.stringify(response))
+                    console.log(JSON.stringify(response))
                         jQuery.ajax( {
-                            url: 'https://api.fitbit.com/1/user/-/activities/heart/date/today/1m.json',
+                            url: 'https://api.fitbit.com/1.2/user/-/sleep/date/' + '2018-11-27' + '.json',
                             type: 'GET',
                             beforeSend : function( xhr ) {
                                 xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );
@@ -37,7 +38,7 @@
                             success: function( response ) { 
                                 json_heartrate = response
                                 jQuery.ajax({
-                                    url: 'https://api.fitbit.com/1.2/user/-/sleep/date/' + todayDate + '.json',
+                                    url: 'https://api.fitbit.com/1.2/user/-/sleep/date/' + '2018-11-27' + '.json',
                                     type: 'GET',
                                     beforeSend : function( xhr ) {
                                         xhr.setRequestHeader( 'Authorization', 'Bearer ' + access_token );

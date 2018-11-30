@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @workout_logger.date
+%p
+  %b Height:
+  = @workout_logger.height
+%p
+  %b Weight:
+  = @workout_logger.weight
+%p
+  %b Steps:
+  = @workout_logger.steps
+%p
+  %b Activitycalories:
+  = @workout_logger.activitycalories
+%p
+  %b Sleepstarttime:
+  = @workout_logger.sleepstarttime
+%p
+  %b Sleependtime:
+  = @workout_logger.sleependtime
+
+= link_to 'Edit', edit_workout_logger_path(@workout_logger)
+\|
+= link_to 'Back', workout_loggers_path

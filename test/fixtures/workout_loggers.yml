@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-11-27 14:28:56
+  height: 1.5
+  weight: 1.5
+  steps: 1
+  activitycalories: 1.5
+  sleepstarttime: 2018-11-27 14:28:56
+  sleependtime: 2018-11-27 14:28:56
+
+two:
+  date: 2018-11-27 14:28:56
+  height: 1.5
+  weight: 1.5
+  steps: 1
+  activitycalories: 1.5
+  sleepstarttime: 2018-11-27 14:28:56
+  sleependtime: 2018-11-27 14:28:56

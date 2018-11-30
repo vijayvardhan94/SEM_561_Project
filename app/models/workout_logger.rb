@@ -1,0 +1,2 @@
+class WorkoutLogger < ApplicationRecord
+end

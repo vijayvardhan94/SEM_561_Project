@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_213032) do
+ActiveRecord::Schema.define(version: 2018_11_27_222856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_213032) do
     t.jsonb "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["index"], name: "index_user_data_on_index", unique: true
+    
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,6 +86,18 @@ ActiveRecord::Schema.define(version: 2018_11_09_213032) do
     t.string "fitbitkey"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "workout_loggers", force: :cascade do |t|
+    t.datetime "date"
+    t.float "height"
+    t.float "weight"
+    t.integer "steps"
+    t.float "activitycalories"
+    t.datetime "sleepstarttime"
+    t.datetime "sleependtime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

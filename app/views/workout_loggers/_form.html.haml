@@ -1,0 +1,31 @@
+= form_for @workout_logger do |f|
+  - if @workout_logger.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@workout_logger.errors.count, "error")} prohibited this workout_logger from being saved:"
+      %ul
+        - @workout_logger.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :date
+    = f.datetime_select :date
+  .field
+    = f.label :height
+    = f.text_field :height
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :steps
+    = f.number_field :steps
+  .field
+    = f.label :activitycalories
+    = f.text_field :activitycalories
+  .field
+    = f.label :sleepstarttime
+    = f.datetime_select :sleepstarttime
+  .field
+    = f.label :sleependtime
+    = f.datetime_select :sleependtime
+  .actions
+    = f.submit 'Save'
