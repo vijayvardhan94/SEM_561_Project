@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_222856) do
     t.jsonb "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    
+    t.index ["index"], name: "index_user_data_on_index", unique: true
   end
 
   create_table "users", force: :cascade do |t|

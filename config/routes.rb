@@ -20,9 +20,10 @@ end
 
 
   get  'pages/about'
-  get  'pages/login' => 'workout_loggers#index'
+  get  'pages/login'  
   get  'pages/index'
   get  'pages/dashboard'  
+  get  'pages/workout'  => 'workout_loggers#index'
   root :to => "pages#index"
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
