@@ -154,4 +154,11 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'Fitbit not synced blank fitbit details', flash[:notice]      
   end 
 
+  test "user_dashing_authentication" do    
+    post "/users/sign_in", params: {user: { email: users(:prateek).email,password: 'prateek1234'} }
+    get "/dashing/events"
+    assert_equal 200,status         
+  end 
+
+
 end
