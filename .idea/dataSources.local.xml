@@ -2,7 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Rails SEM_561_Project: production" uuid="76dfd7b8-a62b-4ad7-9125-cac1f7e88ea5">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
       <user-name>health_network</user-name>
     </data-source>
     <data-source name="Rails SEM_561_Project: development" uuid="10426b21-344f-4399-b669-3fd5b51a5de1">
@@ -10,7 +10,7 @@
       <first-sync>true</first-sync>
     </data-source>
     <data-source name="Rails SEM_561_Project: test" uuid="e805797b-76c0-448e-992e-01862a60e64a">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
     </data-source>
   </component>
 </project>

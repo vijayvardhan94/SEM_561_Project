@@ -30,6 +30,7 @@ gem 'dashing-rails'
 gem "fitgem_oauth2"
 gem 'haml-rails'
 gem 'activesupport'
+gem 'daru'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
